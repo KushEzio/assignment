@@ -1,7 +1,17 @@
 .box {
   border: 1px solid #000000;
   margin: 5px;
+  p {
+    background: gray;
+    padding: 10px 5px;
+  }
+}
+ul {
+  padding-left: 10px;
 }
 li {
   list-style-type: none;
+}
+input[type=checkbox] {
+  margin-right: 5px;
 }

@@ -1,17 +1,25 @@
-<app-header (sort)="sortOrderCheck($event)"></app-header>
-<p>Search by name</p>
-<div>
-  <input  type="text" name="name" [(ngModel)]="nameSearch" placeholder="Enter the name to filter" />
-  <button class="btn btn-primary" (click)="searchCharacters(nameSearch)">Search</button>
+<div class="row mb-5">
+  <div class="col-sm-12">
+    <h1>Selected Filters</h1>
+  </div>
+  <div class="col-sm-8"><label for="searchbyname" style="margin-right: 10px;">Search by name</label>
 
-  <div class="gender box">
+    <input type="text" id="searchbyname" name="name" [(ngModel)]="nameSearch" placeholder="Enter the name to filter"
+      style="width: 300px; padding: 5px;" />
+    <button class="btn btn-primary" (click)="searchCharacters(nameSearch)">Search</button>
+  </div>
+  <div class="col-sm-4">
+    <app-header (sort)="sortOrderCheck($event)"></app-header>
+  </div>
+</div>
+<!-- <div class="gender box">
     <p>Gender</p>
     <ul>
       <li><input type="checkbox" id="male" class="gender" />Male</li>
       <li><input type="checkbox" class="gender" />Female</li>
     </ul>
-  </div>
-  <!-- <select
+  </div> -->
+<!-- <select
       name="sortbox"
       [ngModel]="sortOrder"
       (ngModelChange)="valueChanged(sortOrder)"
@@ -20,7 +28,7 @@
       <option value="ascending">Ascending</option>
       <option value="descending">Descending</option>
     </select> -->
-</div>
+
 <div class="container-fluid">
 
   <div class="row cardRow">

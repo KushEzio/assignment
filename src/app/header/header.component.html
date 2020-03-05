@@ -1,16 +1,12 @@
 <div class=" headerComponent container-fluid">
-  <h1>Selected Filters</h1>
-  <select
-    
-      name="sortbox"
-      [ngModel]="sortOrder"
-      (ngModelChange)="valueChanged($event)"
-      class="float-right form-control"
-      placeholder="Sort by Id"
-    >
-      <option value="ascending">Ascending</option>
-      <option value="descending">Descending</option>
-    </select>
+
+
+  <label for="orderby">Order By: </label>
+  <select class="order-by" id="orderby" name="sortbox" [ngModel]="sortOrder" (ngModelChange)="valueChanged($event)"
+    class="float-right form-control" placeholder="Sort by Id">
+    <option value="ascending">Ascending</option>
+    <option value="descending">Descending</option>
+  </select>
 
   <!-- <p>Search by name</p>
   <div class="pull-left">
