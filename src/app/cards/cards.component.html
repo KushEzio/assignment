@@ -1,0 +1,63 @@
+<app-header (sort)="sortOrderCheck($event)"></app-header>
+<p>Search by name</p>
+<div>
+  <input  type="text" name="name" [(ngModel)]="nameSearch" placeholder="Enter the name to filter" />
+  <button class="btn btn-primary" (click)="searchCharacters(nameSearch)">Search</button>
+
+  <div class="gender box">
+    <p>Gender</p>
+    <ul>
+      <li><input type="checkbox" id="male" class="gender" />Male</li>
+      <li><input type="checkbox" class="gender" />Female</li>
+    </ul>
+  </div>
+  <!-- <select
+      name="sortbox"
+      [ngModel]="sortOrder"
+      (ngModelChange)="valueChanged(sortOrder)"
+      class="float-right"
+    >
+      <option value="ascending">Ascending</option>
+      <option value="descending">Descending</option>
+    </select> -->
+</div>
+<div class="container-fluid">
+
+  <div class="row cardRow">
+    <div class="col-md-3 col-sm-6 col-xs-6 cardColumn" *ngFor="let product of filteredCharacters">
+      <div class="card">
+        <img class="card-img-top" src="{{ product.image }}" alt="Card image cap" />
+        <div class="overlay">
+          <h6>{{ product.name }}</h6>
+
+          <span>id: {{ product.id }} created:{{ product.created | date: "y" }}
+          </span>
+        </div>
+        <div class="card-body">
+          <table>
+            <tr>
+              <td>STATUS</td>
+              <td class="mycolor">{{ product.status }}</td>
+            </tr>
+            <tr>
+              <td>SPECIES</td>
+              <td class="mycolor">{{ product.species }}</td>
+            </tr>
+            <tr>
+              <td>GENDER</td>
+              <td class="mycolor">{{ product.gender }}</td>
+            </tr>
+            <tr>
+              <td>ORIGIN</td>
+              <td class="mycolor">{{ product.origin.name }}</td>
+            </tr>
+            <tr>
+              <td>LAST LOCATION</td>
+              <td class="mycolor">{{ product.location.name }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
